@@ -15,11 +15,44 @@
 # limitations under the License.
 #
 import webapp2
+import random
+
+def getRandomFortune():
+	fortunes = [
+		"I see much code in your future.",
+		"Consider eating more fortune cookies.",
+		"I sense you will bring balance to the Force.",
+		"You have tamed the mighty Python, now you must free it onto the Great Web.",
+		"Invite more C# into your life, and great things will happen.",
+		"I see a great Apprenticeship in your future.",
+		"You will become frustrated because of a silly problem in your code. Remember to relax and remember the principles of Code Zen."
+	] 
+		
+	rand_num = random.randrange(0, len(fortunes))
+	
+	return fortunes[rand_num]
 
 class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        self.response.write('Hello world!')
+	def get(self):
+		header = "<h1>Fortune Cookie</h1>"
+		
+		fortune = getRandomFortune()
+		fortune_message = "<p>Your fortune: " + fortune + "</p>"
+		
+		lucky_num = random.randint(1, 100)
+		num_message = "<p>Your lucky number: " + str(lucky_num) + "</p>"
+		
+		content = header + fortune_message + num_message
+		
+		self.response.write(content)
+		
+class LoginHandler(webapp2.RequestHandler):
+	def get(self):
+		self.response.write("Thanks for trying to log in!")
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-], debug=True)
+routes = [
+	('/', MainHandler),
+	('/login', LoginHandler)
+]
+		
+app = webapp2.WSGIApplication(routes, debug=True)
