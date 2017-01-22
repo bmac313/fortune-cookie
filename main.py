@@ -36,13 +36,15 @@ class MainHandler(webapp2.RequestHandler):
 	def get(self):
 		header = "<h1>Fortune Cookie</h1>"
 		
-		fortune = getRandomFortune()
+		fortune = "<strong>" + getRandomFortune() + "</strong>"
 		fortune_message = "<p>Your fortune: " + fortune + "</p>"
 		
 		lucky_num = random.randint(1, 100)
-		num_message = "<p>Your lucky number: " + str(lucky_num) + "</p>"
+		num_message = "<p>Your lucky number: <strong>" + str(lucky_num) + "</strong></p>"
 		
-		content = header + fortune_message + num_message
+		cookie_again_btn = "<a href='.'>New fortune</a>"
+		
+		content = header + fortune_message + num_message + cookie_again_btn
 		
 		self.response.write(content)
 		
