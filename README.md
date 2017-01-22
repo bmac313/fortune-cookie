@@ -1,0 +1,1 @@
+Created for an assignment in LaunchCode's LC 101
