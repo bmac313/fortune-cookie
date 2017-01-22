@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import webapp2
 import random
 
@@ -21,7 +22,7 @@ def getRandomFortune():
 	fortunes = [
 		"I see much code in your future.",
 		"Consider eating more fortune cookies.",
-		"I sense you will bring balance to the Force.",
+		"I sense you will bring balance to the Hub.",
 		"You have tamed the mighty Python, now you must free it onto the Great Web.",
 		"Invite more C# into your life, and great things will happen.",
 		"I see a great Apprenticeship in your future.",
