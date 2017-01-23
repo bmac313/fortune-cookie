@@ -43,7 +43,7 @@ class MainHandler(webapp2.RequestHandler):
 		lucky_num = random.randint(1, 100)
 		num_message = "<p>Your lucky number: <strong>" + str(lucky_num) + "</strong></p>"
 		
-		cookie_again_btn = "<a href='.'>New fortune</a>"
+		cookie_again_btn = "<a href='.'><button>New fortune</button></a>"
 		
 		content = header + fortune_message + num_message + cookie_again_btn
 		
